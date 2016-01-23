@@ -13,6 +13,14 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* NoughtsCrossesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* NoughtsCrossesTests.m */; };
+		0DB6B9471C536B65007D3106 /* libRNSound.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB6B9461C536AE0007D3106 /* libRNSound.a */; };
+		0DB6B9491C536BB4007D3106 /* reset.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0DB6B9481C536BB4007D3106 /* reset.mp3 */; };
+		0DB6B9531C537050007D3106 /* libRNAudioPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB6B9501C536FE3007D3106 /* libRNAudioPlayer.a */; };
+		0DB6B9581C537313007D3106 /* crosses.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0DB6B9541C537313007D3106 /* crosses.wav */; };
+		0DB6B9591C537313007D3106 /* draw.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0DB6B9551C537313007D3106 /* draw.mp3 */; };
+		0DB6B95A1C537313007D3106 /* noughts.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0DB6B9561C537313007D3106 /* noughts.wav */; };
+		0DB6B95B1C537313007D3106 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0DB6B9571C537313007D3106 /* win.wav */; };
+		0DB6B9611C537FB3007D3106 /* Zap_Raygun_V2.0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DB6B9601C537FB3007D3106 /* Zap_Raygun_V2.0.ttf */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -67,6 +75,27 @@
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = NoughtsCrosses;
 		};
+		0DB6B9451C536AE0007D3106 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DB6B9371C536AE0007D3106 /* RNSound.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 19825A1E1BD4A89800EE0337;
+			remoteInfo = RNSound;
+		};
+		0DB6B94F1C536FE3007D3106 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DB6B94A1C536FE3007D3106 /* RNAudioPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EBE79C421B01EB5A00446766;
+			remoteInfo = RNAudioPlayer;
+		};
+		0DB6B9511C536FE3007D3106 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DB6B94A1C536FE3007D3106 /* RNAudioPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EBE79C4D1B01EB5B00446766;
+			remoteInfo = RNAudioPlayerTests;
+		};
 		139105C01AF99BAD00B5F7CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */;
@@ -114,6 +143,14 @@
 		00E356EE1AD99517003FC87E /* NoughtsCrossesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoughtsCrossesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* NoughtsCrossesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoughtsCrossesTests.m; sourceTree = "<group>"; };
+		0DB6B9371C536AE0007D3106 /* RNSound.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNSound.xcodeproj; path = "../node_modules/react-native-sound/RNSound.xcodeproj"; sourceTree = "<group>"; };
+		0DB6B9481C536BB4007D3106 /* reset.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = reset.mp3; path = ../../Desktop/reset.mp3; sourceTree = "<group>"; };
+		0DB6B94A1C536FE3007D3106 /* RNAudioPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNAudioPlayer.xcodeproj; path = "../node_modules/react-native-audioplayer/RNAudioPlayer.xcodeproj"; sourceTree = "<group>"; };
+		0DB6B9541C537313007D3106 /* crosses.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = crosses.wav; path = ../../Desktop/crosses.wav; sourceTree = "<group>"; };
+		0DB6B9551C537313007D3106 /* draw.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = draw.mp3; path = ../../Desktop/draw.mp3; sourceTree = "<group>"; };
+		0DB6B9561C537313007D3106 /* noughts.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = noughts.wav; path = ../../Desktop/noughts.wav; sourceTree = "<group>"; };
+		0DB6B9571C537313007D3106 /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = win.wav; path = ../../Desktop/win.wav; sourceTree = "<group>"; };
+		0DB6B9601C537FB3007D3106 /* Zap_Raygun_V2.0.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Zap_Raygun_V2.0.ttf; path = "../../Desktop/zapraygunv2-0/Zap_Raygun_V2.0.ttf"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* NoughtsCrosses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoughtsCrosses.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +177,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DB6B9531C537050007D3106 /* libRNAudioPlayer.a in Frameworks */,
+				0DB6B9471C536B65007D3106 /* libRNSound.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
@@ -213,6 +252,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		0DB6B9381C536AE0007D3106 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0DB6B9461C536AE0007D3106 /* libRNSound.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0DB6B94B1C536FE3007D3106 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0DB6B9501C536FE3007D3106 /* libRNAudioPlayer.a */,
+				0DB6B9521C536FE3007D3106 /* RNAudioPlayerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		139105B71AF99BAD00B5F7CC /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +318,8 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				0DB6B94A1C536FE3007D3106 /* RNAudioPlayer.xcodeproj */,
+				0DB6B9371C536AE0007D3106 /* RNSound.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
@@ -287,6 +345,12 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				0DB6B9601C537FB3007D3106 /* Zap_Raygun_V2.0.ttf */,
+				0DB6B9541C537313007D3106 /* crosses.wav */,
+				0DB6B9551C537313007D3106 /* draw.mp3 */,
+				0DB6B9561C537313007D3106 /* noughts.wav */,
+				0DB6B9571C537313007D3106 /* win.wav */,
+				0DB6B9481C536BB4007D3106 /* reset.mp3 */,
 				13B07FAE1A68108700A75B9A /* NoughtsCrosses */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* NoughtsCrossesTests */,
@@ -411,6 +475,14 @@
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
+				{
+					ProductGroup = 0DB6B94B1C536FE3007D3106 /* Products */;
+					ProjectRef = 0DB6B94A1C536FE3007D3106 /* RNAudioPlayer.xcodeproj */;
+				},
+				{
+					ProductGroup = 0DB6B9381C536AE0007D3106 /* Products */;
+					ProjectRef = 0DB6B9371C536AE0007D3106 /* RNSound.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -454,6 +526,27 @@
 			fileType = archive.ar;
 			path = libRCTVibration.a;
 			remoteRef = 00C302E31ABCB9EE00DB3ED1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0DB6B9461C536AE0007D3106 /* libRNSound.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNSound.a;
+			remoteRef = 0DB6B9451C536AE0007D3106 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0DB6B9501C536FE3007D3106 /* libRNAudioPlayer.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNAudioPlayer.a;
+			remoteRef = 0DB6B94F1C536FE3007D3106 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0DB6B9521C536FE3007D3106 /* RNAudioPlayerTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RNAudioPlayerTests.xctest;
+			remoteRef = 0DB6B9511C536FE3007D3106 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		139105C11AF99BAD00B5F7CC /* libRCTSettings.a */ = {
@@ -505,7 +598,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DB6B95B1C537313007D3106 /* win.wav in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				0DB6B9591C537313007D3106 /* draw.mp3 in Resources */,
+				0DB6B9581C537313007D3106 /* crosses.wav in Resources */,
+				0DB6B9611C537FB3007D3106 /* Zap_Raygun_V2.0.ttf in Resources */,
+				0DB6B95A1C537313007D3106 /* noughts.wav in Resources */,
+				0DB6B9491C536BB4007D3106 /* reset.mp3 in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -2,6 +2,7 @@
 
 var React = require('react-native');
 var Button = require('react-native-button'); // Install the button from npm with npm install react-native-button --save
+var AudioPlayer = require('react-native-audioplayer'); // For playing sounds
 var {
   StyleSheet,
   AppRegistry,
@@ -90,9 +91,10 @@ var NoughtsCrosses = React.createClass({
 
     return (
       <View style = { styles.container } >
-        <View style = { styles.header } >
+      <View style = { styles.header } >
+      </View>
 
-        </View>
+        <Text style={ styles.title }>X - O</Text>
 
         { /* buttonPressed method is passed a parameter which is the ID of the button which helps in disabling it once pressed */ }
         <View style = { styles.grid } >
@@ -185,7 +187,7 @@ var NoughtsCrosses = React.createClass({
 
     if (chance) {
       // Player 1's turn
-
+      AudioPlayer.play('crosses.wav');
       character = "X";
       this.setState({
         // Change the flag for Player 2's turn
@@ -193,7 +195,7 @@ var NoughtsCrosses = React.createClass({
       });
     } else {
       // Player 2's turn
-
+      AudioPlayer.play('noughts.wav');
       character = "O";
       this.setState({
         // Change the flag for Player 2's turn
@@ -301,6 +303,8 @@ var NoughtsCrosses = React.createClass({
         Case when the text of the buttons in the first row are all the same i.e. are all 'X' or are all 'O'
       ***/
 
+      AudioPlayer.play('win.wav');
+
       Alert.alert(
         'Game Over!',
         text0 + "s Win!",
@@ -317,6 +321,8 @@ var NoughtsCrosses = React.createClass({
         Case when the text of the buttons in the middle row are all the same i.e. are all 'X' or are all 'O'
       ***/
 
+      AudioPlayer.play('win.wav');
+
       Alert.alert(
         'Game Over!',
         text3 + "s Win!",
@@ -332,6 +338,8 @@ var NoughtsCrosses = React.createClass({
       /***
         Case when the text of the buttons in the last row are all the same i.e. are all 'X' or are all 'O'
       ***/
+
+      AudioPlayer.play('win.wav');
 
       console.log("3 " + text6 + " " + text7 + " " + text8);
 
@@ -351,6 +359,8 @@ var NoughtsCrosses = React.createClass({
         Case when the text of the buttons in the first column are all the same i.e. are all 'X' or are all 'O'
       ***/
 
+      AudioPlayer.play('win.wav');
+
       Alert.alert(
         'Game Over!',
         text0 + "s Win!",
@@ -366,6 +376,8 @@ var NoughtsCrosses = React.createClass({
       /***
         Case when the text of the buttons in the middle column are all the same i.e. are all 'X' or are all 'O'
       ***/
+
+      AudioPlayer.play('win.wav');
 
       Alert.alert(
         'Game Over!',
@@ -383,6 +395,8 @@ var NoughtsCrosses = React.createClass({
         Case when the text of the buttons in the last column are all the same i.e. are all 'X' or are all 'O'
       ***/
 
+      AudioPlayer.play('win.wav');
+
       Alert.alert(
         'Game Over!',
         text2 + "s Win!",
@@ -398,6 +412,8 @@ var NoughtsCrosses = React.createClass({
       /***
         Case when the text of the buttons in the diagonal row (left to right) are all the same i.e. are all 'X' or are all 'O'
       ***/
+
+      AudioPlayer.play('win.wav');
 
       Alert.alert(
         'Game Over!',
@@ -415,6 +431,8 @@ var NoughtsCrosses = React.createClass({
         Case when the text of the buttons in the diagonal row (right to left) are all the same i.e. are all 'X' or are all 'O'
       ***/
 
+      AudioPlayer.play('win.wav');
+
       Alert.alert(
         'Game Over!',
         text6 + "s Win!",
@@ -427,6 +445,8 @@ var NoughtsCrosses = React.createClass({
 
       // Case: Game draw
       if (countChances == 9) {
+
+        AudioPlayer.play('draw.mp3')
 
         Alert.alert(
           'Game Over!',
@@ -441,6 +461,8 @@ var NoughtsCrosses = React.createClass({
 
   },
   resetGame: function() {
+
+    AudioPlayer.play('reset.mp3');
 
     // Reset all teh values in the state in order to reset the game.
     this.setState({
@@ -465,6 +487,8 @@ var NoughtsCrosses = React.createClass({
       disabled8: false,
       counter: 0
     });
+
+    //whoosh.stop();
   }
 
 });
@@ -477,10 +501,15 @@ var styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   header: {
-    flex: 2 // Flex header 2/8th of the entire screen size
+    flex: 1 // Flex header 1/6th of the entire screen size
+  },
+  title: {
+    fontFamily: 'ZapRaygunV20',
+    fontSize: 80,
+    color: '#00CC00'
   },
   grid: {
-    flex: 3, // Flex grid 3/8th of the entire screen size
+    flex: 3, // Flex grid 3/6th of the entire screen size
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
@@ -489,7 +518,7 @@ var styles = StyleSheet.create({
     height: 250
   },
   footer: {
-    flex: 2 // Flex footer 2/8th of the entire screen size
+    flex: 2 // Flex footer 2/th of the entire screen size
   },
   button: {
     borderWidth: 2,
