@@ -8,7 +8,7 @@ var {
   AppRegistry,
   View,
   Text,
-  Alert, // For notifying user
+  Alert, // For showing an alert box
   Image, // Required for adding the Reset button
   TouchableHighlight // Required for making the Image pressable
 } = React;
@@ -33,53 +33,62 @@ var NoughtsCrosses = React.createClass({
       character0: null,
       // Flag determining whether button0 is enabled or disabled
       disabled0: false,
+      color0: '#FF6600',
 
       // Text to be shown on the button1
       character1: null,
       // Flag determining whether button1 is enabled or disabled
       disabled1: false,
+      color1: '#FF6600',
 
       // Text to be shown on the button2
       character2: null,
       // Flag determining whether button2 is enabled or disabled
       disabled2: false,
+      color2: '#FF6600',
 
       // Text to be shown on the button3
       character3: null,
       // Flag determining whether button3 is enabled or disabled
       disabled3: false,
+      color3: '#FF6600',
 
       // Text to be shown on the button4
       character4: null,
       // Flag determining whether button4 is enabled or disabled
       disabled4: false,
+      color4: '#FF6600',
 
       // Text to be shown on the button5
       character5: null,
       // Flag determining whether button5 is enabled or disabled
       disabled5: false,
+      color5: '#FF6600',
 
       // Text to be shown on the button6
       character6: null,
       // Flag determining whether button6 is enabled or disabled
       disabled6: false,
+      color6: '#FF6600',
 
       // Text to be shown on the button7
       character7: null,
       // Flag determining whether button7 is enabled or disabled
       disabled7: false,
+      color7: '#FF6600',
 
       // Text to be shown on the button8
       character8: null,
       // Flag determining whether button8 is enabled or disabled
       disabled8: false,
+      color8: '#FF6600',
 
       /***
         counter variable for determining a draw condition.
         If none of the wining conditions are met, declare the game as draw.
         Therefore, when counter > 8, declate the game as draw.
       ***/
-      counter: 0
+      counter: 0,
     }
   },
   render: function() {
@@ -100,19 +109,19 @@ var NoughtsCrosses = React.createClass({
         <View style = { styles.grid } >
           <View style = {{ justifyContent: 'space-around', padding: 20 }}>
           <Button  disabled = { this.state.disabled0 } onPress = { () => this.buttonPressed(0) }>
-              <Text style = {[ styles.button ]}>
+              <Text style = { [styles.button, { color: this.state.color0 } ] } >
                 { /* Display the button text as per the state */ }
                 { this.state.character0 }
               </Text>
           </Button>
           <Button  disabled = { this.state.disabled1 } onPress = { () => this.buttonPressed(1) }>
-              <Text style = {[ styles.button ]}>
+              <Text style = {[ styles.button, { color: this.state.color1 } ] }>
                 { /* Display the button text as per the state */ }
                 { this.state.character1 }
               </Text>
           </Button>
           <Button  disabled = { this.state.disabled2 } onPress = { () => this.buttonPressed(2) }>
-              <Text style = {[ styles.button ]}>
+              <Text style = {[ styles.button, { color: this.state.color2 } ] }>
                 { /* Display the button text as per the state */ }
                 { this.state.character2 }
               </Text>
@@ -121,19 +130,19 @@ var NoughtsCrosses = React.createClass({
 
           <View style = {{ justifyContent: 'space-around', padding: 20 }}>
           <Button  disabled = { this.state.disabled3 } onPress = { () => this.buttonPressed(3) }>
-              <Text style = {[ styles.button ]}>
+              <Text style = {[ styles.button, { color: this.state.color3 } ] }>
                 { /* Display the button text as per the state */ }
                 { this.state.character3 }
               </Text>
           </Button>
           <Button  disabled = { this.state.disabled4 } onPress = { () => this.buttonPressed(4) }>
-              <Text style = {[ styles.button ]}>
+              <Text style = {[ styles.button, { color: this.state.color4 } ] }>
                 { /* Display the button text as per the state */ }
                 { this.state.character4 }
               </Text>
           </Button>
           <Button  disabled = { this.state.disabled5 } onPress = { () => this.buttonPressed(5) }>
-              <Text style = {[ styles.button ]}>
+              <Text style = {[ styles.button, { color: this.state.color5 } ] }>
                 { /* Display the button text as per the state */ }
                 { this.state.character5 }
               </Text>
@@ -142,19 +151,19 @@ var NoughtsCrosses = React.createClass({
 
           <View style = {{ justifyContent: 'space-around', padding: 20 }}>
           <Button  disabled = { this.state.disabled6 } onPress = { () => this.buttonPressed(6) }>
-              <Text style = {[ styles.button ]}>
+              <Text style = {[ styles.button, { color: this.state.color6 } ] }>
                 { /* Display the button text as per the state */ }
                 { this.state.character6 }
               </Text>
           </Button>
           <Button  disabled = { this.state.disabled7 } onPress = { () => this.buttonPressed(7) }>
-              <Text style = {[ styles.button ]}>
+              <Text style = {[ styles.button, { color: this.state.color7 } ] }>
                 { /* Display the button text as per the state */ }
                 { this.state.character7 }
               </Text>
           </Button>
           <Button  disabled = { this.state.disabled8 } onPress = { () => this.buttonPressed(8) }>
-              <Text style = {[ styles.button ]}>
+              <Text style = {[ styles.button, { color: this.state.color8 } ] }>
                 { /* Display the button text as per the state */ }
                 { this.state.character8 }
               </Text>
@@ -182,13 +191,16 @@ var NoughtsCrosses = React.createClass({
     var chance = this.state.flag;
 
     // Character to be displayed on the button
-    var character
+    var character;
     console.log("FLAG: " + chance);
+
+    var newColor;
 
     if (chance) {
       // Player 1's turn
       AudioPlayer.play('crosses.wav');
-      character = "X";
+      character = 'X';
+      newColor = '#FF6600';
       this.setState({
         // Change the flag for Player 2's turn
         flag: false
@@ -196,7 +208,8 @@ var NoughtsCrosses = React.createClass({
     } else {
       // Player 2's turn
       AudioPlayer.play('noughts.wav');
-      character = "O";
+      character = 'O';
+      newColor = '#FFCC00';
       this.setState({
         // Change the flag for Player 2's turn
         flag: true
@@ -213,55 +226,64 @@ var NoughtsCrosses = React.createClass({
       case 0:
         this.setState({
           disabled0: true,
-          character0: character
+          character0: character,
+          color0: newColor
         });
         break;
       case 1:
         this.setState({
           disabled1: true,
-          character1: character
+          character1: character,
+          color1: newColor
         });
         break;
       case 2:
         this.setState({
           disabled2: true,
-          character2: character
+          character2: character,
+          color2: newColor
           });
         break;
       case 3:
         this.setState({
           disabled3: true,
-          character3: character
+          character3: character,
+          color3: newColor
         });
         break;
       case 4:
         this.setState({
           disabled4: true,
-          character4: character
+          character4: character,
+          color4: newColor
         });
         break;
       case 5:
         this.setState({
           disabled5: true,
-          character5: character
+          character5: character,
+          color5: newColor
         });
         break;
       case 6:
         this.setState({
           disabled6: true,
-          character6: character
+          character6: character,
+          color6: newColor
         });
         break;
       case 7:
         this.setState({
           disabled7: true,
-          character7: character
+          character7: character,
+          color7: newColor
         });
         break;
       case 8:
         this.setState({
           disabled8: true,
-          character8: character
+          character8: character,
+          color8: newColor
         });
         break;
       default:
@@ -269,7 +291,9 @@ var NoughtsCrosses = React.createClass({
     }
 
     // Increment the counter variable as on press has occured
-    countChances += 1;
+
+    if (countChances)
+
     console.log("COUNTER: " + countChances);
     this.setState({
       counter: countChances
@@ -469,26 +493,35 @@ var NoughtsCrosses = React.createClass({
       flag: true,
       character0: null,
       disabled0: false,
+      color0: '#FF6600',
       character1: null,
       disabled1: false,
+      color1: '#FF6600',
       character2: null,
       disabled2: false,
+      color2: '#FF6600',
       character3: null,
       disabled3: false,
+      color3: '#FF6600',
       character4: null,
       disabled4: false,
+      color4: '#FF6600',
       character5: null,
       disabled5: false,
+      color5: '#FF6600',
       character6: null,
       disabled6: false,
+      color6: '#FF6600',
       character7: null,
       disabled7: false,
+      color7: '#FF6600',
       character8: null,
       disabled8: false,
+      color8: '#FF6600',
       counter: 0
+
     });
 
-    //whoosh.stop();
   }
 
 });
@@ -530,7 +563,8 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     paddingLeft: 18,
     paddingTop: 10,
-    fontSize: 25
+    fontSize: 25,
+    fontFamily: 'ZapRaygunV20',
   }
 });
 
