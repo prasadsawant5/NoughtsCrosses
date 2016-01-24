@@ -292,8 +292,8 @@ var NoughtsCrosses = React.createClass({
 
     // Increment the counter variable as on press has occured
 
-    if (countChances)
 
+    countChances += 1;
     console.log("COUNTER: " + countChances);
     this.setState({
       counter: countChances
